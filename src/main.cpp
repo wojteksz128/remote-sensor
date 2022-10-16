@@ -1,9 +1,14 @@
 #include <Arduino.h>
+#include <ArduinoLog.h>
+
+#include "logging/config.h"
 
 void setup() {
-  // put your setup code here, to run once:
+  setupLogging();
+  printWelcomeLog();
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  Log.infoln(".");
+  delay(1000);
 }

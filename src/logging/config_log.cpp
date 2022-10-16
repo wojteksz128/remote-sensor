@@ -1,7 +1,7 @@
 #include <ArduinoLog.h>
 
-#include "config.h"
-#include "../config.h"
+#include "config_log.h"
+#include "../config_global.h"
 
 
 #define MSECS_PER_SEC               1000
@@ -19,6 +19,7 @@ void setupLogging()
     Serial.begin(SERIAL_BAUD_RATE);
     Log.begin(LOG_LEVEL, &Serial);
     Log.setPrefix(printPrefix);
+    Log.setShowLevel(false);
 }
 
 void printPrefix(Print* _logOutput, int logLevel)

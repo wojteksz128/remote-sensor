@@ -1,5 +1,5 @@
-#ifndef rs_config
-#define rs_config
+#ifndef rs_config_global
+#define rs_config_global
 
 #include <ArduinoLog.h>
 
@@ -7,4 +7,4 @@
 
 #define LOG_LEVEL               LOG_LEVEL_NOTICE
 
-#endif  // rs_config
+#endif  // rs_config_global

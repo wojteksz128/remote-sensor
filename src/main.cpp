@@ -1,7 +1,7 @@
 #include <Arduino.h>
 #include <ArduinoLog.h>
 
-#include "logging/config.h"
+#include "logging/config_log.h"
 
 void setup() {
   setupLogging();

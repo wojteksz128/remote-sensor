@@ -3,21 +3,12 @@
 
 #include <LiquidCrystal_I2C.h>
 
-#define CHECK       0
-#define CROSS       1
-#define DEGREE      2
-#define TEMP_ICON   3
-#define PRESSURE    4
-#define TIME_ICON   5
-
-
 class LCDScreen : public Print {
   private:
     LiquidCrystal_I2C lcd;
-    LCDScreen();
-  public:
-    static LCDScreen& getInstance();
-    
+  public:   
+    LCDScreen(); 
+
     void clear();
     void home();
     void noDisplay();
@@ -65,5 +56,7 @@ class LCDScreen : public Print {
     // void draw_horizontal_graph(uint8_t row, uint8_t column, uint8_t len,  uint8_t pixel_col_end);
     // void draw_vertical_graph(uint8_t row, uint8_t column, uint8_t len,  uint8_t pixel_col_end);
 };
+
+extern LCDScreen screen;
 
 #endif  // rs_screen_lcdscreen

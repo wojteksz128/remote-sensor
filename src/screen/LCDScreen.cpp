@@ -1,31 +1,18 @@
 #include "LCDScreen.h"
+#include "../config_global.h"
 
-static uint8_t checkCode[8] = { 0x00, 0x01, 0x03, 0x16, 0x1C, 0x08, 0x00, 0x00 };
-static uint8_t crossCode[8] = { 0x00, 0x1B, 0x0E, 0x04, 0x0E, 0x1B, 0x00, 0x00 };
-static uint8_t degreeCode[8] = { 0x02, 0x05, 0x02, 0x00, 0x00, 0x00, 0x00, 0x00 };
-static uint8_t tempIconCode[8] = { 0x04, 0x06, 0x04, 0x06, 0x04, 0x0E, 0x0E, 0x00 };
-static uint8_t pressureCode[8] = { 0x00, 0x04, 0x04, 0x04, 0x15, 0x0E, 0x04, 0x00 };
-static uint8_t timeIconCode[8] = { 0x00, 0x00, 0x0E, 0x15, 0x17, 0x11, 0x0E, 0x00 };
-
-
-LCDScreen::LCDScreen() : lcd(LiquidCrystal_I2C(0x3F, 16, 2))
+LCDScreen::LCDScreen() : lcd(LiquidCrystal_I2C(LCD_ADDRESS, LCD_COLS, LCD_ROWS))
 {
   lcd.init();
   lcd.clear();
   lcd.backlight();
 
-  lcd.createChar(CHECK, checkCode);
-  lcd.createChar(CROSS, crossCode);
-  lcd.createChar(DEGREE, degreeCode);
-  lcd.createChar(TEMP_ICON, tempIconCode);
-  lcd.createChar(PRESSURE, pressureCode);
-  lcd.createChar(TIME_ICON, timeIconCode);
-}
-
-LCDScreen& LCDScreen::getInstance()
-{
-  static LCDScreen instance;
-  return instance;
+  lcd.createChar(CHECK, CHECK_LAYOUT);
+  lcd.createChar(CROSS, CROSS_LAYOUT);
+  lcd.createChar(DEGREE, DEGREE_LAYOUT);
+  lcd.createChar(TEMP_ICON, TEMP_ICON_LAYOUT);
+  lcd.createChar(PRESSURE, PRESSURE_LAYOUT);
+  lcd.createChar(TIME_ICON, TIME_ICON_LAYOUT);
 }
 
 void LCDScreen::clear() {
@@ -148,3 +135,5 @@ void LCDScreen::printstr(const char c[]) {
 }
 
 #endif
+
+LCDScreen screen;

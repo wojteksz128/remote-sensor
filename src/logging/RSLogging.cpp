@@ -1,6 +1,6 @@
 #include <ArduinoLog.h>
 
-#include "config_log.h"
+#include "RSLogging.h"
 #include "../config_global.h"
 
 
@@ -14,12 +14,12 @@ void printPrefix(Print* _logOutput, int logLevel);
 void printTimestamp(Print* _logOutput);
 void printLogLevel(Print* _logOutput, int logLevel);
 
-void setupLogging()
+RSLogging::RSLogging()
 {
     Serial.begin(SERIAL_BAUD_RATE);
-    Log.begin(LOG_LEVEL, &Serial);
-    Log.setPrefix(printPrefix);
-    Log.setShowLevel(false);
+    this->begin(LOG_LEVEL, &Serial);
+    this->setPrefix(printPrefix);
+    this->setShowLevel(false);
 }
 
 void printPrefix(Print* _logOutput, int logLevel)
@@ -62,12 +62,4 @@ void printLogLevel(Print* _logOutput, int logLevel)
     }   
 }
 
-void printWelcomeLog()
-{
-    Serial.println();
-    Log.infoln("==================================================");
-    Log.infoln("====== Booted remote-sensor by wojteksz128 =======");
-    Log.infoln("==================================================");
-
-    delay(1000);
-}
+RSLogging logger;

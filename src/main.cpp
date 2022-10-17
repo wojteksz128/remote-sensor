@@ -1,14 +1,26 @@
 #include <Arduino.h>
 #include <ArduinoLog.h>
 
-#include "logging/config_log.h"
+#include "logging/RSLogging.h"
+
+
+void printWelcomeLog();
 
 void setup() {
-  setupLogging();
   printWelcomeLog();
 }
 
+void printWelcomeLog()
+{
+    Serial.println();
+    logger.infoln("==================================================");
+    logger.infoln("====== Booted remote-sensor by wojteksz128 =======");
+    logger.infoln("==================================================");
+
+    delay(1000);
+}
+
 void loop() {
-  Log.infoln(".");
+  logger.infoln(".");
   delay(1000);
 }

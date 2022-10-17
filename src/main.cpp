@@ -1,8 +1,8 @@
 #include <Arduino.h>
 #include <ArduinoLog.h>
 
-#include "logging/RSLogging.h"
-#include "screen/LCDScreen.h"
+#include "logging/config_logging.h"
+#include "screen/config_screen.h"
 
 
 void printWelcomeLog();

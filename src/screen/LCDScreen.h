@@ -57,6 +57,4 @@ class LCDScreen : public Print {
     // void draw_vertical_graph(uint8_t row, uint8_t column, uint8_t len,  uint8_t pixel_col_end);
 };
 
-extern LCDScreen screen;
-
 #endif  // rs_screen_lcdscreen

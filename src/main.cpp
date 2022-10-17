@@ -1,9 +1,26 @@
 #include <Arduino.h>
+#include <ArduinoLog.h>
+
+#include "logging/RSLogging.h"
+
+
+void printWelcomeLog();
 
 void setup() {
-  // put your setup code here, to run once:
+  printWelcomeLog();
+}
+
+void printWelcomeLog()
+{
+    Serial.println();
+    logger.infoln("==================================================");
+    logger.infoln("====== Booted remote-sensor by wojteksz128 =======");
+    logger.infoln("==================================================");
+
+    delay(1000);
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  logger.infoln(".");
+  delay(1000);
 }

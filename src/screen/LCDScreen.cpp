@@ -1,5 +1,5 @@
 #include "LCDScreen.h"
-#include "../config_global.h"
+#include "../configuration/config_global.h"
 
 LCDScreen::LCDScreen() : lcd(LiquidCrystal_I2C(LCD_ADDRESS, LCD_COLS, LCD_ROWS))
 {

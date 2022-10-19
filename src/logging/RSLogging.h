@@ -9,6 +9,4 @@ public:
     RSLogging();
 };
 
-extern RSLogging logger;
-
 #endif  // rs_logging_rslogging

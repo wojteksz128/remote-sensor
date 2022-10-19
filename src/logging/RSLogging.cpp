@@ -1,7 +1,7 @@
 #include <ArduinoLog.h>
 
 #include "RSLogging.h"
-#include "../config_global.h"
+#include "../configuration/config_global.h"
 
 
 #define MSECS_PER_SEC               1000

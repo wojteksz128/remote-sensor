@@ -3,6 +3,22 @@
 
 #include <ArduinoLog.h>
 
+// ============= Configuration loading ==============
+
+#define CONFIG_FILE_PATH        "/config.json"
+#define CONFIG_SSID_LABEL       "ssid"
+#define CONFIG_PASS_LABEL       "pass"
+
+// ============= Network configuration ==============
+
+#define AP_DEFAULT_LOCAL_IP_PARTS        192,168,1,1
+#define AP_DEFAULT_GATEWAY_PARTS         192,168,1,1
+#define AP_DEFAULT_SUBNET_PARTS          255,255,255,0
+#define AP_DEFAULT_AP_SSID              (char*)"remote-sensor Config"
+
+#define NETWORK_CONNECT_TIMEOUT         30
+#define NETWORK_DOTS_EVERY_SECOND       2
+
 // =========== Logging configuration ================
 
 #define SERIAL_BAUD_RATE        115200

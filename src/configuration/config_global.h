@@ -3,6 +3,12 @@
 
 #include <ArduinoLog.h>
 
+// ============= Configuration loading ==============
+
+#define CONFIG_FILE_PATH        "/config.json"
+#define CONFIG_SSID_LABEL       "ssid"
+#define CONFIG_PASS_LABEL       "pass"
+
 // =========== Logging configuration ================
 
 #define SERIAL_BAUD_RATE        115200

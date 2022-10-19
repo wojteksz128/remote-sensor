@@ -14,7 +14,10 @@
 #define AP_DEFAULT_LOCAL_IP_PARTS        192,168,1,1
 #define AP_DEFAULT_GATEWAY_PARTS         192,168,1,1
 #define AP_DEFAULT_SUBNET_PARTS          255,255,255,0
-#define AP_DEFAULT_AP_SSID               (char*)"remote-sensor Config"
+#define AP_DEFAULT_AP_SSID              (char*)"remote-sensor Config"
+
+#define NETWORK_CONNECT_TIMEOUT         30
+#define NETWORK_DOTS_EVERY_SECOND       2
 
 // =========== Logging configuration ================
 

@@ -3,14 +3,14 @@
 
 #include "logging/config_logging.h"
 #include "screen/config_screen.h"
-#include "network/config_access_point.h"
+#include "network/config_network_manager.h"
 
 void printWelcomeLog();
 
 void setup()
 {
 	printWelcomeLog();
-	ap.run();
+	networkManager.configure();
 }
 
 void printWelcomeLog()

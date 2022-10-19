@@ -3,6 +3,7 @@
 
 #include "ConfigManager.h"
 #include "config_global.h"
+#include "config_config_manager.h"
 
 ConfigManager::ConfigManager()
 {
@@ -98,3 +99,5 @@ void ConfigManager::setPassword(const char *password)
 {
 	strcpy(this->pass, password);
 }
+
+ConfigManager configManager;
